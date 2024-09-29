@@ -4,9 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [storyStep, setStoryStep] = useState("beginStory")
-  const [storyPreferences, setStoryPreferences] = useState<{
-    ageGroup: string, genre: string, characterLength: string, storyType: string
-  }>({
+  const [storyPreferences, setStoryPreferences] = useState({
     ageGroup: '',
     genre: '',
     characterLength: "",
@@ -38,10 +36,10 @@ export default function Home() {
   console.log("storystep", storyStep);
   console.log("storyPreferences", storyPreferences);
   return (
-    <div className=" h-[90%]  relative grid place-items-center ">
-      <Image src={"/images/bgBubbles.svg"} height={854} width={1073} className="h-full max-h-screen -z-10 w-full max-w-[100%] md:max-w-[60%] absolute -top-24 p-0 right-0 bg-cover" alt="tinytales logo" />
+    <div className=" h-screen  relative grid place-items-center ">
+      <Image src={"/images/bgBubbles.svg"} height={854} width={1073} className="h-full max-h-screen -z-10 w-fit absolute -top-24 p-0 left-0 bg-contain" alt="tinytales logo" />
 
-      <div className="w-full  max-w-[980px] h-[512px] p-7 rounded-[28px] shadow-white shadow-lg   backdrop-blur-xl bg-black/60 mx-auto">
+      <div className="w-full  max-w-[980px] h-[512px] p-7 rounded-[28px] backdrop-blur-3xl bg-white/[13%] mx-auto shadow-[0px_0px_10px_5px_rgba(255,255,255,0.2)]">
         <div className="grid place-items-center gap-3">
           <Image src={"/images/tinlytalesicon.svg"} height={78} width={78} className="size-[50px] md:size-[78px]" alt=" tinytales logo Icon" />
           <p className="md:text-[40px] text-white text-center tracking-[10px] font-bold">TinyTales</p>
@@ -56,10 +54,56 @@ export default function Home() {
         {storyStep === "beginStory" && (
           <div className="grid place-items-center gap-4">
             <p className="md:text-lg text-white text-center max-w-[560px] leading-normal">Unleash your imagination! Write your story type below, and watch it come to life!</p>
-            <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#0090CE] rounded-md mx-auto cursor-pointer hover:opacity-70">
+            {/* <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:opacity-70">
               <span className="text-white text-lg font-semibold ">•    Create Tale </span>
               <Image src={"/images/magicStick.svg"} height={35} width={35} className="size-[20px] md:size-[35px]" alt="magic stick" />
+            </button> */}
+
+            {/* <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">• Create Tale</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-500 ease-out group-hover:rotate-12 delay-200"
+                alt="magic stick"
+              />
+            </button> */}
+
+
+            {/* 
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group hover:animate-pulse"
+            >
+              <span className="text-white text-lg font-semibold group-hover:animate-bounce">• Create Tale</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-500 ease-out group-hover:rotate-[360deg] group-hover:animate-shake"
+                alt="magic stick"
+              />
+            </button> */}
+
+
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">• Create Tale</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-1000 ease-out group-hover:rotate-[360deg]"
+                alt="magic stick"
+              />
             </button>
+
           </div>
         )}
 
@@ -76,15 +120,23 @@ export default function Home() {
 
               ))}
             </div>
-            <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#0090CE] rounded-md mx-auto cursor-pointer hover:opacity-70">
-              <span className="text-white text-lg font-semibold ">Contiue</span>
-              <Image src={"/images/magicStick.svg"} height={35} width={35} className="size-[20px] md:size-[35px]" alt="magic stick" />
+
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">Contiue</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-1000 ease-out group-hover:rotate-[360deg]"
+                alt="magic stick"
+              />
             </button>
           </div >
         )
         }
-
-
 
         {storyStep === "selectGenre" && (
           <div className="grid place-items-center gap-8">
@@ -99,13 +151,21 @@ export default function Home() {
 
               ))}
             </div>
-            <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#0090CE] rounded-md mx-auto cursor-pointer hover:opacity-70">
-              <span className="text-white text-lg font-semibold ">Contiue</span>
-              <Image src={"/images/magicStick.svg"} height={35} width={35} className="size-[20px] md:size-[35px]" alt="magic stick" />
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">Contiue</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-1000 ease-out group-hover:rotate-[360deg]"
+                alt="magic stick"
+              />
             </button>
           </div >
         )}
-
 
         {storyStep === "characterLength" && (
           <div className="grid place-items-center gap-8">
@@ -120,15 +180,21 @@ export default function Home() {
 
               ))}
             </div>
-            <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#0090CE] rounded-md mx-auto cursor-pointer hover:opacity-70">
-              <span className="text-white text-lg font-semibold ">Contiue</span>
-              <Image src={"/images/magicStick.svg"} height={35} width={35} className="size-[20px] md:size-[35px]" alt="magic stick" />
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">Contiue</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-1000 ease-out group-hover:rotate-[360deg]"
+                alt="magic stick"
+              />
             </button>
           </div >
         )}
-
-
-
 
         {storyStep === "storyType" && (
           <div className="grid place-items-center gap-4">
@@ -137,9 +203,18 @@ export default function Home() {
               ...prevState,
               storyType: e.target.value
             }))} type="text" placeholder="Enter your story type" className="w-full text-white bg-[#FDFDFF]/30 py-4 px-2 outline-none max-w-96  rounded-md" />
-            <button onClick={() => handleStoryStepChange(storyStep)} className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#0090CE] rounded-md mx-auto cursor-pointer hover:opacity-70">
-              <span className="text-white text-lg font-semibold ">•    Create Tale </span>
-              <Image src={"/images/magicStick.svg"} height={35} width={35} className="size-[20px] md:size-[35px]" alt="magic stick" />
+            <button
+              onClick={() => handleStoryStepChange(storyStep)}
+              className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
+            >
+              <span className="text-white text-lg font-semibold">Create Tale</span>
+              <Image
+                src="/images/magicStick.svg"
+                height={35}
+                width={35}
+                className="size-[20px] md:size-[35px] transition-transform duration-1000 ease-out group-hover:rotate-[360deg]"
+                alt="magic stick"
+              />
             </button>
           </div>
         )}
