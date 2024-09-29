@@ -8,7 +8,7 @@ const Navbar = () => {
             <Image src={"/images/tinytaleslogo.svg"} height={89} width={404} className=" h-[50px] md:h-[60px] lg:h-[89px] w-[150px] md:w-[300px] xl:w-[404px]" alt="tinytales logo" />
             <div className="flex items-center justify-center gap-2 md:gap-4">
                 <BiSolidUserCircle color='#E2E6E9' className="size-[25px] md:size-[40px]" />
-                <p className=" border-l border-white"><span className="text-sm md:text-lg lg:text-xl text-white mx-2 md:mx-3 cursor-pointer hover:opacity-70">Sign Out</span></p>
+                <p className=" border-l border-white"><span className="text-sm md:text-lg lg:text-xl text-white mx-2 md:mx-3 cursor-pointer hover:text-[#026E78]">Sign Out</span></p>
             </div>
         </nav>
     )
