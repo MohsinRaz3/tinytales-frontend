@@ -3,15 +3,14 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "./fonts/balootamma/BalooTamma2-Medium.ttf",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  variable: "--font-baloo-tamma",
   weight: "100 900",
 });
 
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1A1A1A]`}
+        className={`${geistSans.variable} ${geistMono.variable}  font-[family-name:var(--font-baloo-tamma)] antialiased bg-[#1A1A1A]`}
       >
         <Navbar />
         {children}
