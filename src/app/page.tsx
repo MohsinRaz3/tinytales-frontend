@@ -148,7 +148,7 @@ export default function Home() {
             <p className="text-white text-lg tracking-wide text-center ">Select any Genre to generate a story tailored for that audience.</p>
             <div className="flex justify-center flex-wrap items-center gap-3">
 
-              {["Fantasy", "Comedy", "Horror", "Romance", "Scienc Fiction"].map((genreText: string, index) => (
+              {["Fantasy", "Comedy", "Horror", "Romance", "Science Fiction"].map((genreText: string, index) => (
                 <div key={index} onClick={() => setStoryPreferences(prevState => ({
                   ...prevState,
                   genre: genreText
