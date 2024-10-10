@@ -118,11 +118,17 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [currentMessageIndex]);
+
   useEffect(() => {
     async function callAPi() {
-      await fetch("https://tinytales-backend-lablab.onrender.com/")
-      await fetch("https://tinytales-backend-lablab.onrender.com/")
+      await fetch("https://tinytales-backend-lablab.onrender.com/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      })
     }
+    callAPi()
     callAPi()
   }, [])
 
