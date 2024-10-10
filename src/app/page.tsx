@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function Home() {
-  const [storyStep, setStoryStep] = useState("beginStory")
+  const [storyStep, setStoryStep] = useState("storyType")
   const [story, setStory] = useState<IStory | null>(null)
   const [storyPreferences, setStoryPreferences] = useState<IStoryPreferences>({
     ageGroup: '',
     genre: '',
     characterLength: "",
     storyType: "",
-    isLoading: false,
+    isLoading: true,
   });
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
@@ -118,6 +118,13 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [currentMessageIndex]);
+  useEffect(() => {
+    async function callAPi() {
+      await fetch("https://tinytales-backend-lablab.onrender.com/")
+      await fetch("https://tinytales-backend-lablab.onrender.com/")
+    }
+    callAPi()
+  }, [])
 
   return (
     <div className=" h-screen  relative grid place-items-center w-full">
@@ -203,7 +210,7 @@ export default function Home() {
           {storyStep === "storyType" && (
 
             isLoading ? (
-              <div className={`text-center text-white text-xl font-semibold animate-fade-in-out`}>
+              <div className={`py-20 md:py-10 leading-6 md:leading-[50px] lg:leading-normal  md:text-[30px] text-white text-center font-bold animate-fade-in-out`}>
                 {messages[currentMessageIndex]}
               </div>
 
