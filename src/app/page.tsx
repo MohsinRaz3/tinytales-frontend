@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function Home() {
-  const [storyStep, setStoryStep] = useState("storyType")
+  const [storyStep, setStoryStep] = useState("beginStory")
   const [story, setStory] = useState<IStory | null>(null)
   const [storyPreferences, setStoryPreferences] = useState<IStoryPreferences>({
     ageGroup: '',
     genre: '',
     characterLength: "",
     storyType: "",
-    isLoading: true,
+    isLoading: false,
   });
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
