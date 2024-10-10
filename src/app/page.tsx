@@ -83,7 +83,7 @@ export default function Home() {
       characters: characterLength
     }
 
-    const generateStoryRes = await fetch(`https://tinytales-backend-1.onrender.com/story_creation`, {
+    const generateStoryRes = await fetch(`https://tinytales-backend-lablab.onrender.com/story_creation`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
