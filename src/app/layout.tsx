@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}  font-[family-name:var(--font-baloo-tamma)] antialiased bg-[#1A1A1A]`}
       >
         <Navbar />
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>
