@@ -223,10 +223,16 @@ export default function Home() {
             ) : (
               <div className="grid place-items-center gap-4">
                 <p className="md:text-lg text-white text-center max-w-[560px] leading-normal font-[family-name:var(--font-baloo-tamma)]">Unleash your imagination! Write your story type below, and watch it come to life!</p>
-                <input value={storyType} onChange={(e) => setStoryPreferences(prevState => ({
-                  ...prevState,
-                  storyType: e.target.value
-                }))} type="text" placeholder="Enter your story type" className="w-full text-white bg-[#FDFDFF]/30 py-4 px-2 outline-none max-w-96  rounded-md" />
+                <input value={storyType}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                      handleStoryGeneration();
+                    }
+                  }}
+                  onChange={(e) => setStoryPreferences(prevState => ({
+                    ...prevState,
+                    storyType: e.target.value
+                  }))} type="text" placeholder="Enter your story type" className="w-full text-white bg-[#FDFDFF]/30 py-4 px-2 outline-none max-w-96  rounded-md" />
                 <button
                   onClick={handleStoryGeneration}
                   className="flex justify-center items-center gap-3 w-full max-w-96 py-4 bg-[#026E78] rounded-md mx-auto cursor-pointer hover:bg-[#028a96] hover:scale-105 transition-transform duration-300 ease-out shadow-lg hover:shadow-xl group"
