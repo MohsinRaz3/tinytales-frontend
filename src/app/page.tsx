@@ -23,28 +23,45 @@ export default function Home() {
 
   function handleStoryStepChange(storyStep: string, storyPreferences: IStoryPreferences) {
     switch (storyStep) {
-      case "beginStory": setStoryStep("selectAgeGroup");
+      case "beginStory":
+        setStoryStep("selectAgeGroup");
         break;
-      case "selectAgeGroup": storyPreferences.ageGroup.length > 0 ? setStoryStep("selectGenre") : toast.error('Please select age group to continue');
+      case "selectAgeGroup":
+        if (storyPreferences.ageGroup.length > 0) {
+          setStoryStep("selectGenre");
+        } else {
+          toast.error('Please select age group to continue');
+        }
         break;
-      case "selectGenre": storyPreferences.genre.length > 0 ? setStoryStep("characterLength") : toast.error("Please select what genre's tale you want to create");
+      case "selectGenre":
+        if (storyPreferences.genre.length > 0) {
+          setStoryStep("characterLength");
+        } else {
+          toast.error("Please select what genre's tale you want to create");
+        }
         break;
-      case "characterLength": storyPreferences.characterLength.length > 0 ? setStoryStep("storyType") : toast.error('Please select how many character you want in the Tale');
+      case "characterLength":
+        if (storyPreferences.characterLength.length > 0) {
+          setStoryStep("storyType");
+        } else {
+          toast.error('Please select how many characters you want in the Tale');
+        }
         break;
-      // case "storyType": storyPreferences.storyType.length > 0 ? setStoryStep("success") : toast.error('Please share your idea for the type of tale you wish to create!');
-      //   setStoryPreferences({
-      //     ageGroup: '',
-      //     genre: '',
-      //     characterLength: "",
-      //     storyType: "",
-      //     isLoading: false
-      //   })
-      //   break;
-      case "success": setStoryStep("beginStory");
+      case "storyType":
+        if (storyPreferences.storyType.length > 0) {
+          setStoryStep("success");
+        } else {
+          toast.error('Please share your idea for the type of tale you wish to create!');
+        }
         break;
-
+      case "success":
+        setStoryStep("beginStory");
+        break;
+      default:
+        break;
     }
   }
+
   const { ageGroup, genre, characterLength, storyType, isLoading } = storyPreferences;
   console.log("storystep", storyStep);
   console.log("storyPreferences", storyPreferences);

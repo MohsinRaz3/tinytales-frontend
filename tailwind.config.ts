@@ -66,14 +66,14 @@ const config: Config = {
       },
       keyframes: {
         'fade-in-out': {
-          '0%': { opacity: 0 },
-          '20%': { opacity: 1 },
-          '80%': { opacity: 1 },
-          '100%': { opacity: 0 },
+          '0%': { opacity: "0" },
+          '20%': { opacity: "1" },
+          '80%': { opacity: "1" },
+          '100%': { opacity: "0" },
         },
       },
       animation: {
-        'fade-in-out': 'fade-in-out 5s ease-in-out infinite', // Wrap '5s' in quotes to avoid the type error
+        'fade-in-out': 'fade-in-out 5s ease-in-out infinite',
       },
     },
   },
