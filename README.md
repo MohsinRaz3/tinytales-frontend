@@ -18,8 +18,8 @@ TinyTales is an AI-powered micro-SaaS platform that generates engaging audio sto
 - **Input**: Users provide a text prompt to generate the story.
 - **Output**: The UI displays the generated video thumbnail and provides a link to download the MP3 audio file.
 
-<Image src="assets/tinytales-idea.png" alt="TinyTales UI" width={800} height={600} />
-<Image src="assets/tiny-tales-ui.png" alt="TinyTales UI" width={800} height={600} />
+<Image src="public/images/tinytales-idea.png" alt="TinyTales UI" width={800} height={600} />
+<Image src="public/images/tiny-tales-ui.png" alt="TinyTales UI" width={800} height={600} />
 
 ## Technologies Used
 
@@ -47,7 +47,7 @@ The flow of TinyTales is simple yet powerful:
 
 The following flowchart outlines the core process of TinyTales:
 
-<Image src="assets/tinytales-flowchat.png" alt="TinyTales Flowchart" width={800} height={600} />
+<Image src="public/images/tinytales-flowchat.png" alt="TinyTales Flowchart" width={800} height={600} />
 
 - **Start**: The user begins by entering a prompt.
 - **ChatGPT**: Generates a script or story from the input prompt.
